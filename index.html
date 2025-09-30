@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Cibersegurança | Raphael Ferrari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo customizado para a estética de terminal */
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            --accent-color: #2f81f7;
+            --glow-color: rgba(47, 129, 247, 0.4);
+        }
+        .terminal-window {
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px var(--glow-color);
+        }
+        .terminal-header {
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+        }
+        .btn-circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .btn-red { background-color: #ed6a5e; }
+        .btn-yellow { background-color: #f4bf4f; }
+        .btn-green { background-color: #61c554; }
+        .prompt::before {
+            content: 'user@rferrari:~$ ';
+            color: var(--accent-color);
+        }
+        .cursor {
+            display: inline-block;
+            background-color: #58a6ff;
+            width: 10px;
+            height: 1.2em;
+            animation: blink 1s step-end infinite;
+            margin-left: 5px;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #58a6ff; }
+        }
+        h2 {
+            border-bottom: 1px solid #30363d;
+            text-shadow: 0 0 5px var(--glow-color);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 2px solid #0d1117;
+        }
+        .skill-tag {
+            border: 1px solid #30363d;
+            transition: all 0.2s ease-in-out;
+        }
+        .skill-tag:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            box-shadow: 0 0 10px var(--glow-color);
+            transform: translateY(-2px);
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <main class="max-w-4xl mx-auto space-y-12">
+        <!-- Cabeçalho / Terminal -->
+        <header class="terminal-window bg-[#0d1117]/80 backdrop-blur-sm">
+            <div class="terminal-header p-3 flex items-center space-x-2">
+                <div class="btn-circle btn-red"></div>
+                <div class="btn-circle btn-yellow"></div>
+                <div class="btn-circle btn-green"></div>
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="text-lg md:text-xl">
+                    <span class="prompt"></span><span id="typing-text"></span><span class="cursor"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sobre -->
+        <section id="sobre" class="p-6 md:p-8 terminal-window section-fade-in">
+            <h2 class="text-2xl font-bold mb-4 pb-2 text-slate-200">./SOBRE_MIM.sh</h2>
+            <p class="text-slate-300 leading-relaxed">
+                Profissional com experiência em tecnologia e operações, em transição de carreira para a área de Risco e Cibersegurança. Sólida vivência em liderança de equipes, comprovada pela gestão de 8 colaboradores e pela otimização de processos que reduziu o tempo de validação de risco de 2 dias para menos de 1 hora. Habilidade na criação de dashboards para suporte à decisão da alta gestão.
+            </p>
+        </section>
+
+        <!-- Experiência -->
+        <section id="experiencia" class="p-6 md:p-8 terminal-window section-fade-in">
+            <h2 class="text-2xl font-bold mb-6 pb-2 text-slate-200">cat /var/log/experiencia.log</h2>
+            <div class="relative border-l-2 border-dashed border-gray-700 ml-5 space-y-10">
+                <!-- Item da Timeline -->
+                <div class="timeline-item pl-8">
+                    <h3 class="text-lg font-bold text-slate-200">Supervisor Suporte Técnico III</h3>
+                    <p class="text-sm text-blue-400">HINOVA | Outubro 2023 - O momento</p>
+                    <ul class="list-disc list-inside mt-2 text-slate-300 space-y-1">
+                        <li>Liderança de equipes de Atendimento e Implantação (8 colaboradores).</li>
+                        <li>Supervisão do monitoramento de transações em tempo real para prevenção a fraudes.</li>
+                        <li>Otimização drástica do fluxo de validação de risco (de 2 dias para < 1 hora).</li>
+                        <li>Desenvolvimento de dashboards estratégicos no Google Looker para a diretoria.</li>
+                    </ul>
+                </div>
+                <!-- Item da Timeline -->
+                <div class="timeline-item pl-8">
+                    <h3 class="text-lg font-bold text-slate-200">Supervisor Suporte Técnico I / Analista de Suporte III</h3>
+                    <p class="text-sm text-blue-400">HINOVA | Junho 2021 - Novembro 2023</p>
+                     <ul class="list-disc list-inside mt-2 text-slate-300 space-y-1">
+                        <li>Estruturação e liderança das equipes, estabelecendo processos e monitorias.</li>
+                        <li>Criação de scripts, relatórios gerenciais e fluxos de trabalho.</li>
+                        <li>Atuação como referência técnica na resolução de chamados complexos e capacitação do time.</li>
+                    </ul>
+                </div>
+                <!-- Item da Timeline -->
+                <div class="timeline-item pl-8">
+                    <h3 class="text-lg font-bold text-slate-200">Técnico de Software I e II</h3>
+                    <p class="text-sm text-blue-400">HINOVA | Março 2019 - Junho 2021</p>
+                    <ul class="list-disc list-inside mt-2 text-slate-300 space-y-1">
+                        <li>Atendimento a chamados de suporte técnico Nível 1 e Nível 2.</li>
+                        <li>Liderança na implementação do sistema de gestão de chamados (Octadesk).</li>
+                        <li>Diagnóstico e resolução de chamados técnicos em múltiplos canais.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação e Certificações -->
+        <section id="certificacoes" class="p-6 md:p-8 terminal-window section-fade-in">
+            <h2 class="text-2xl font-bold mb-6 pb-2 text-slate-200">ls -l /etc/certificacoes/</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-200 mb-3">Formação Acadêmica</h3>
+                    <ul class="list-disc list-inside text-slate-300">
+                        <li>Tecnólogo em Segurança da Informação (em andamento) - UNINTER</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-slate-200 mb-3">Certificações Chave</h3>
+                    <ul class="list-disc list-inside text-slate-300">
+                        <li>Certificado Profissional em Cibersegurança do Google (em andamento)</li>
+                        <li>Cybersecurity & Risco (FIAP, Cisco, Bradesco)</li>
+                        <li>Dados & Análise (Data Science Academy, Alura)</li>
+                        <li>Gestão & Ferramentas (Alura, Blip Academy)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competências -->
+        <section id="competencias" class="p-6 md:p-8 terminal-window section-fade-in">
+            <h2 class="text-2xl font-bold mb-6 pb-2 text-slate-200">grep -r "skills" /home/</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-bold text-slate-200 mb-2">> Risco & Conformidade</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">GRC</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Análise de Risco</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Prevenção a Fraudes</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">KYC</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">LGPD</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Endpoint Security</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-200 mb-2">> Ferramentas e Tecnologias</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Google Looker</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Blip IA</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">SAP</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">SQL</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Octadesk</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Jira</span>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="font-bold text-slate-200 mb-2">> Gestão & Processos</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Liderança de Equipes</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Gestão de KPIs</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Otimização de Processos</span>
+                        <span class="skill-tag px-3 py-1 rounded-md bg-gray-800">Gestão de SLA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <footer id="contato" class="text-center py-8 section-fade-in">
+            <h2 class="text-2xl font-bold mb-4">Entrar em contato</h2>
+            <p class="text-slate-300 mb-4">Disponível para novas oportunidades e desafios.</p>
+            <div class="flex justify-center items-center gap-6">
+                <a href="mailto:raphaelferrari10@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">raphaelferrari10@gmail.com</a>
+                <a href="https://www.linkedin.com/in/raphael-ferrari-/" target="_blank" rel="noopener noreferrer" class="skill-tag px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-500 hover:text-white">
+                    LinkedIn
+                </a>
+            </div>
+            <p class="text-xs text-gray-600 mt-8"></p>
+        </footer>
+    </main>
+
+    <script>
+        // Efeito de digitação
+        const typingTextElement = document.getElementById('typing-text');
+        const textToType = "Raphael Ferrari // Analista de Risco & Cibersegurança";
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textToType.length) {
+                typingTextElement.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 70); // Velocidade da digitação
+            }
+        }
+        
+        // Animação de fade-in ao rolar a página
+        const sections = document.querySelectorAll('.section-fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Iniciar a digitação quando a página carregar
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
+</body>
+</html>
